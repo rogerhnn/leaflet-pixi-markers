@@ -16,27 +16,27 @@
   },
   {
     "title": "Top left corner",
-    "icon": "https://1c03930b-6ab3-4cd6-bf2d-8681c11b1eec.id.repl.co/files/debug_marker_2.png",
+    "icon": "./files/debug_marker_2.png",
     "coords": [0, 4160]
   },
   {
     "title": "Top right corner",
-    "icon": "https://1c03930b-6ab3-4cd6-bf2d-8681c11b1eec.id.repl.co/files/debug_marker_2.png",
+    "icon": "./files/debug_marker_2.png",
     "coords": [4160, 4160]
   },
   {
     "title": "Bottom left corner",
-    "icon": "https://1c03930b-6ab3-4cd6-bf2d-8681c11b1eec.id.repl.co/files/debug_marker_2.png",
+    "icon": "./files/debug_marker_2.png",
     "coords": [0, 0]
   },
   {
     "title": "Bottom right corner",
-    "icon": "https://1c03930b-6ab3-4cd6-bf2d-8681c11b1eec.id.repl.co/files/debug_marker_2.png",
+    "icon": "./files/debug_marker_2.png",
     "coords": [4160, 0]
   },
   {
     "title": "Center",
-    "icon": "https://1c03930b-6ab3-4cd6-bf2d-8681c11b1eec.id.repl.co/files/debug_marker_2.png",
+    "icon": "./files/debug_marker_2.png",
     "coords": [2080, 2080]
   }
 ]
