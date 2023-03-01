@@ -13,24 +13,24 @@ async function pixiTest() {
   const marker1 = new PIXI.Sprite(markerTexture);
   marker1.width = 128; // Does this works?
   marker1.height = 128; // I noticed the icon only change size if set through the scale
-  marker1.anchor.set(0.5, 1);
+  marker1.anchor.set(0.5, 0.5);
   marker1.interactive = true;
   marker1.buttonMode = true;
   marker1.on("pointerup", handleMarkerClick);
 
-  const marker2Coords = [520, 524];
+  const marker2Coords = [0, 4160];
   const marker2 = new PIXI.Sprite(markerTexture);
   marker2.width = 128;
   marker2.height = 128;
-  marker2.anchor.set(0.5, 1);
+  marker2.anchor.set(0.5, 0.5);
   marker2.interactive = true;
   marker2.buttonMode = true;
 
-  const marker3Coords = [0, 0];
+  const marker3Coords = [2080, 2080];
   const marker3 = new PIXI.Sprite(markerTexture);
   marker3.width = 128;
   marker3.height = 128;
-  marker3.anchor.set(0.5, 1);
+  marker3.anchor.set(0.5, 0.5);
   marker3.interactive = true;
   marker3.buttonMode = true;
 
@@ -52,24 +52,23 @@ async function pixiTest() {
     const scale = utils.getScale();
 
     if (firstDraw) {
-      marker1.x = marker1Coords[0];
-      marker1.y = marker1Coords[1];
+      const markerCoords1 = project(marker1Coords);
+      marker1.x = markerCoords1.x;
+      marker1.y = markerCoords1.y;
 
-      marker2.x = marker2Coords[0];
-      marker2.y = marker2Coords[1];
+      const markerCoords2 = project(marker2Coords);
+      marker2.x = markerCoords2.x;
+      marker2.y = markerCoords2.y;
 
-      let convertedCoords = unproject(L.point(marker2Coords[0],marker2Coords[1]));
-
-      marker2.x = marker2Coords[0];
-      marker2.y = marker2Coords[1];
-
-      marker3.x = convertedCoords.lat;
-      marker3.y = convertedCoords.lng;
+      const markerCoords3 = project(marker3Coords);
+      marker3.x = markerCoords3.x;
+      marker3.y = markerCoords3.y;
     }
 
     if (firstDraw || prevZoom !== zoom) {
       marker1.scale.set(scaleFactor / scale);
       marker2.scale.set(scaleFactor / scale);
+      marker3.scale.set(scaleFactor / scale);
     }
 
     firstDraw = false;
